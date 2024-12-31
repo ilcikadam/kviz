@@ -9,7 +9,8 @@ function start(){
     otazka.textContent = "Otazka";
     form.appendChild(otazka)
     let question = document.createElement("input");
-    question.setAttribute("id","question")
+    question.setAttribute("id","question");
+    question.setAttribute("class", "question");
     form.appendChild(question);
     for (let i = 0; i < 8; i++){
         let p = document.createElement("p");

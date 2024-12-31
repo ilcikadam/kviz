@@ -12,6 +12,12 @@ const setButton = document.getElementById("setQuestions");
 validationButton.addEventListener("click", validation);
 setButton.addEventListener("click", setQuestions);
 
+let list = [];
+    for (let i = 0; i<questions.length; i++){
+        list.push(i);
+    }
+    let permIndeces = randomPermutation(list);
+
 function randint(min, max){
     return Math.floor(Math.random()*(max-min))+min;
 }
@@ -41,20 +47,15 @@ function setQuestionsOld(){
 }
 
 function setQuestions(){
-    let list = [];
-    for (let i = 0; i<questions.length; i++){
-        list.push(i);
-    }
-    let randomQuestions = randomPermutation(list);
     for (let i = 0; i<10;i++){
         let div = document.createElement('div');
         div.setAttribute('id', i);
         document.getElementById("form").appendChild(div);
         let question = document.createElement('h1');
-        question.textContent = questions[randomQuestions[i]];
+        question.textContent = questions[permIndeces[i]];
         question.setAttribute('class', 'paragraph');
         document.getElementById(i).appendChild(question);
-        let randomOptions = randomPermutation(options[randomQuestions[i]]);
+        let randomOptions = randomPermutation(options[permIndeces[i]]);
         for (let j = 0; j<4; j++){
             let tick = document.createElement('input');
             tick.setAttribute('type', 'checkbox');
@@ -64,8 +65,10 @@ function setQuestions(){
             option.setAttribute('for', j);
             option.setAttribute('class', 'answer');
             option.textContent = randomOptions[j];
+            let br = document.createElement('br');
             document.getElementById(i).appendChild(tick);
             document.getElementById(i).appendChild(option);
+            div.appendChild(br);
         }
     }
 }
@@ -95,12 +98,12 @@ function validation(){
     for (let i = 0; i < ticks.length; i++){
         let x = Math.floor(i/4);
         if (ticks[i].checked) {
-            if (correctAnswers[x].includes(answers[i].innerHTML)){
+            if (correctAnswers[permIndeces[x]].includes(answers[i].innerHTML)){
                 points += 1;
             }
         }
         else{
-            if (!correctAnswers[x].includes(answers[i].innerHTML)){
+            if (!correctAnswers[permIndeces[x]].includes(answers[i].innerHTML)){
                 points += 1;
             }
        }
