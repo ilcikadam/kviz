@@ -1,7 +1,7 @@
 //import {correctAnswers} from "editor.js";
 //will not work if opened from ://
 var points = 0;
-const questions = ["Prvú ucelenú evolučnú teóriu živých organizmov sformuloval:","Ktoré tvrdenie je správne:","Bunkovú teóriu formulovali:"];
+const questions = ["Prvú ucelenú evolučnú teóriu živých organizmov sformuloval:","Ktoré tvrdenie je správne:"];
 const correctAnswers = [["J.B. Lamarck","francúzsky prírodovedec J.B.Lamarck v roku 1809"],["L.Pasteur definitívne vyvrátil možnosť samoplodenia i tých najmenších organizmov","T.Schwann patrí k autorom bunkovej teórie","pre skúmanie biologických objektov použil mikroskop medzi prvými R.Hooke"]];
 const options = [["nemecký lekár G.Trevirana","Ch.Darwin","J.B. Lamarck","L.Pasteur","C.Linné","C.Woese","anglický prírodovedec W.Harvey","francúzsky prírodovedec J.B.Lamarck v roku 1809"],["J.B. Lamarck je autorom binomickej nomenklatúry","L.Pasteur definitívne vyvrátil možnosť samoplodenia i tých najmenších organizmov","M.J. Schleiden je zakladateľom modernej systematiky organizmov","T.Schwann patrí k autorom bunkovej teórie","C.Woese je autorom dvojmenného pomenovania organizmov","pre skúmanie biologických objektov použil mikroskop medzi prvými R.Hooke","J.G. Mendel objasnil, že molekuly DNA sú materiálnym nositeľom genetickej informácie","autorstvo pojmu biológia sa pripisuje A.Leeuwenhoekovi"]];
 
