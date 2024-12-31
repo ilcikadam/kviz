@@ -57,7 +57,7 @@ function copyText(){
     for (let i = 0; i<options.length-1; i++){
         text += '"' + questions[i] + '", ';
     }
-    text += '"' + options[options.length-1] + '"]';
+    text += '"' + questions[options.length-1] + '"]';
     text += "\nOPTIONS \n";
     for (let i = 0; i<options.length; i++){
         let option = options[i];
@@ -65,7 +65,7 @@ function copyText(){
         for (let j = 0; j<7; j++){
             text += '"' + String(option[j]) + '",';
         }
-        text += '"' + String(option[7]) + "],";
+        text += '"' + String(option[7]) + '"],';
     }
     text += "\nCORRECT ANSWERS \n";
     for (let i = 0; i<options.length; i++){
@@ -74,7 +74,7 @@ function copyText(){
         for (let j = 0; j<correctAnswer.length-1; j++){
             text += '"' + String(correctAnswer[j]) + '",';
         }
-        text += '"' + String(correctAnswer[correctAnswer-1]) + "],";
+        text += '"' + String(correctAnswer[correctAnswer.length-1]) + '"],';
     }
     document.getElementById("demo").innerHTML = text;
     navigator.clipboard.writeText(text);
