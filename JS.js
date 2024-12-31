@@ -5,6 +5,7 @@ const questions = ["Prvú ucelenú evolučnú teóriu živých organizmov sformu
 const correctAnswers = [["J.B. Lamarck","francúzsky prírodovedec J.B.Lamarck v roku 1809"],["L.Pasteur definitívne vyvrátil možnosť samoplodenia i tých najmenších organizmov","T.Schwann patrí k autorom bunkovej teórie","pre skúmanie biologických objektov použil mikroskop medzi prvými R.Hooke"]];
 const options = [["nemecký lekár G.Trevirana","Ch.Darwin","J.B. Lamarck","L.Pasteur","C.Linné","C.Woese","anglický prírodovedec W.Harvey","francúzsky prírodovedec J.B.Lamarck v roku 1809"],["J.B. Lamarck je autorom binomickej nomenklatúry","L.Pasteur definitívne vyvrátil možnosť samoplodenia i tých najmenších organizmov","M.J. Schleiden je zakladateľom modernej systematiky organizmov","T.Schwann patrí k autorom bunkovej teórie","C.Woese je autorom dvojmenného pomenovania organizmov","pre skúmanie biologických objektov použil mikroskop medzi prvými R.Hooke","J.G. Mendel objasnil, že molekuly DNA sú materiálnym nositeľom genetickej informácie","autorstvo pojmu biológia sa pripisuje A.Leeuwenhoekovi"]];
 
+//TO DO: make all indeces index=> i, j
 
 const validationButton = document.getElementById("validation");
 const setButton = document.getElementById("setQuestions");
@@ -40,16 +41,20 @@ function setQuestionsOld(){
 }
 
 function setQuestions(){
-    let randomQuestions = randomPermutation(questions);
+    let list = [];
+    for (let i = 0; i<questions.length; i++){
+        list.push(i);
+    }
+    let randomQuestions = randomPermutation(list);
     for (let i = 0; i<10;i++){
         let div = document.createElement('div');
         div.setAttribute('id', i);
         document.getElementById("form").appendChild(div);
         let question = document.createElement('h1');
-        question.textContent = randomQuestions[i];
+        question.textContent = questions[randomQuestions[i]];
         question.setAttribute('class', 'paragraph');
         document.getElementById(i).appendChild(question);
-        let randomOptions = randomPermutation(options[i]);
+        let randomOptions = randomPermutation(options[randomQuestions[i]]);
         for (let j = 0; j<4; j++){
             let tick = document.createElement('input');
             tick.setAttribute('type', 'checkbox');
