@@ -113,6 +113,12 @@ function validation(){
     }
     points = 0;
 }
+if (questions.length != options.length || questions.length != correctAnswers.length) {
+        document.getElementById("demo").innerHTML = "chyba";
+    }
+else {
+    document.getElementById("pocetotazok").innerHTML = "Počet otázok: " + String(questions.length);
+}
 
 
 
