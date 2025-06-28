@@ -1,8 +1,8 @@
 var points = 0;
 
-const questions = []
-const correctAnswers = []
-const options = []
+const questions = ["Vyberte správne pomenovania a vzorce kyselín odvodených od síry:"]
+const correctAnswers = [["H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2SO6 je kyselina diperoxosírová","H2S2O9 je kyselina diperoxodisírová"]]
+const options = [["H2SO5 je kyselina peroxosiričitá","H2SO6 je kyselina peroxosírová","H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2S2O7 je kyselina peroxodisiričitá","H2SO6 je kyselina diperoxosírová","H2S2O8 je kyselina diperoxodisírová","H2S2O9 je kyselina diperoxodisírová"]]
 
 const validationButton = document.getElementById("validation");
 const setButton = document.getElementById("setQuestions");
