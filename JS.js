@@ -106,7 +106,7 @@ function validation(){
     }
     document.getElementById("demo").innerHTML = String(points) + "/" + String(ticks.length);
     if (questions.length != options.length || questions.length != correctAnswers.length) {
-        document.getElementById("demo").innerHTML = "chyba";
+        document.getElementById("demo").innerHTML = "chyba\n" + String(questions.length) + " " + String(questions.length) + " " + String(questions.length);
     }
     else {
         document.getElementById("pocetotazok").innerHTML = "Počet otázok: " + String(questions.length);
