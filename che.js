@@ -1,8 +1,8 @@
 var points = 0;
 
-const questions = ["Vyberte správne pomenovania a vzorce kyselín odvodených od síry:"]
-const correctAnswers = [["H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2SO6 je kyselina diperoxosírová","H2S2O9 je kyselina diperoxodisírová"]]
-const options = [["H2SO5 je kyselina peroxosiričitá","H2SO6 je kyselina peroxosírová","H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2S2O7 je kyselina peroxodisiričitá","H2SO6 je kyselina diperoxosírová","H2S2O8 je kyselina diperoxodisírová","H2S2O9 je kyselina diperoxodisírová"]]
+const questions = ["Vyberte správne pomenovania a vzorce kyselín odvodených od síry:","Vyberte správne pomenovania a vzorce hydridov:", "Vyberte odpovede, kde vzorce neodpovedajú uvedeným zlúčeninám:"]
+const correctAnswers = [["H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2SO6 je kyselina diperoxosírová","H2S2O9 je kyselina diperoxodisírová"],["AsH3 je arzán","GeH4 je germán","H2Se je selán","PH3 je fosfán"],["SiN4 je nitrid kremičitý","LiAs3 je arzenid lítny","Pb3N2 je azid olovnatý","AlSb3 je antimonid hlinitý"]]
+const options = [["H2SO5 je kyselina peroxosiričitá","H2SO6 je kyselina peroxosírová","H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2S2O7 je kyselina peroxodisiričitá","H2SO6 je kyselina diperoxosírová","H2S2O8 je kyselina diperoxodisírová","H2S2O9 je kyselina diperoxodisírová"],["P3H je fosfán","Al3H je fosfán","AsH3 je arzán","GeH4 je germán","H2Se je selán","PH3 je fosfán","SeH2 je selán","HS2 je sulfán"],["SiN4 je nitrid kremičitý","GaAs je arzenid galitý","LiAs3 je arzenid lítny","Pb3N2 je azid olovnatý","Mg3P2 je fosfid horečnatý","CaC2 je karbid vápenatý","Si3N4 je nitrid kremičitý","AlSb3 je antimonid hlinitý"]]
 
 const validationButton = document.getElementById("validation");
 const setButton = document.getElementById("setQuestions");
