@@ -4,3 +4,54 @@ form{
 label {
     font-size: 16px;
   }
+.flex{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: #55f;
+    height: 60px;
+}
+.flex a {
+    width: 220px;
+    position: relative;
+}
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#dom{
+    width: 60px;
+}
+#dom:hover{
+    background-color: white;
+}
+
+#biologia{
+    background-color: yellowgreen;
+}
+#biologia:hover{
+    background-color: white;
+}
+
+#chemia{
+    background-color: #f4f;
+}
+#chemia:hover{
+    background-color: white;
+}
+
+#editor{
+    background-color: orange;
+}
+#editor:hover{
+    background-color: white;
+}

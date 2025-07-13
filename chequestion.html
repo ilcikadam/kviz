@@ -7,7 +7,12 @@
 <body>
     <h1>Chémia</h1> 
     <p id= "pocetotazok">Počet otázok: </p>
-    <a href="./">Domov</a>
+    <div class="flex">
+        <a href="./" id="dom"><canvas id="domov" width="50" height="50"></canvas></a> 
+        <a href="./question.html" id="biologia"><canvas id="bio" width="200" height="50"></canvas></a>
+        <a href="./chequestion.html" id = "chemia"><canvas id="che" width="200" height="50"></canvas></a>
+        <a href="./editor.html" id = "editor"><canvas id="edit" width="200" height="50"></canvas></a>   
+    </div>
     <button type="button" id="setQuestions">Set questions</button>
     <form id="form">
 
@@ -15,4 +20,5 @@
     <button type="button" id="validation">Submit</button>
     <p id="demo"></p>
     <script src="che.js"></script>
+    <script src="hlavicka.js"></script>
 </body>
