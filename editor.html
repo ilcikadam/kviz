@@ -1,10 +1,17 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <head>
     <link rel="stylesheet" href="editorStyle.css">
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
 <body>
-    <a href="./">Domov</a>
+    <h1>Editor</h1>
+    <div class="flex">
+        <a href="./" id="dom"><canvas id="domov" width="50" height="50"></canvas></a> 
+        <a href="./question.html" id="biologia"><canvas id="bio" width="200" height="50"></canvas></a>
+        <a href="./chequestion.html" id = "chemia"><canvas id="che" width="200" height="50"></canvas></a>
+        <a href="./editor.html" id = "editor"><canvas id="edit" width="200" height="50"></canvas></a>   
+    </div>
     <button id="start">Start</button>
     <form id="form">
     </form>
@@ -12,4 +19,5 @@
     <button id="copyText">Copy text</button>
     <p id="demo"></p>
     <script src="editor.js"></script>
+    <script src="hlavicka.js"></script>
 </body>
