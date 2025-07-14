@@ -17,7 +17,7 @@ label {
     width: 220px;
     position: relative;
 }
-canvas {
+.flex a canvas {
     padding: 0;
     margin: auto;
     display: block;
@@ -26,6 +26,8 @@ canvas {
     bottom: 0;
     left: 0;
     right: 0;
+    border-width: 3px;
+    border-color: black;
 }
 
 #dom{
@@ -54,4 +56,7 @@ canvas {
 }
 #editor:hover{
     background-color: white;
+}
+#demo{
+    font-size: xx-large;
 }

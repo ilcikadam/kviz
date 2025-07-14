@@ -11,14 +11,16 @@
         <a href="./" id="dom"><canvas id="domov" width="50" height="50"></canvas></a> 
         <a href="./question.html" id="biologia"><canvas id="bio" width="200" height="50"></canvas></a>
         <a href="./chequestion.html" id = "chemia"><canvas id="che" width="200" height="50"></canvas></a>
-        <a href="./editor.html" id = "editor"><canvas id="edit" width="200" height="50"></canvas></a>   
+        <a href="./editor.html" id = "editor"><canvas id="edit" width="200" height="50"></canvas></a>
+        <canvas id="filter" width="150" height="60"></canvas>
+        <input type="checkbox" id="filterBox" onclick="filterovanie()">
     </div>
     <button type="button" id="setQuestions">Set questions</button>
     <form id="form">
 
     </form>
     <button type="button" id="validation">Submit</button>
-    <p id="demo"></p>
+    <strong><p id="demo"></p></strong>
     <script src="che.js"></script>
     <script src="hlavicka.js"></script>
 </body>

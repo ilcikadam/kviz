@@ -4,16 +4,7 @@ const questions = ["Vyberte správne pomenovania a vzorce kyselín odvodených o
 const correctAnswers = [["H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2SO6 je kyselina diperoxosírová","H2S2O9 je kyselina diperoxodisírová"],["AsH3 je arzán","GeH4 je germán","H2Se je selán","PH3 je fosfán"],["SiN4 je nitrid kremičitý","LiAs3 je arzenid lítny","Pb3N2 je azid olovnatý","AlSb3 je antimonid hlinitý"]]
 const options = [["H2SO5 je kyselina peroxosiričitá","H2SO6 je kyselina peroxosírová","H2S2O8 je kyselina peroxodisírová","H2S2O7 je kyselina disírová","H2S2O7 je kyselina peroxodisiričitá","H2SO6 je kyselina diperoxosírová","H2S2O8 je kyselina diperoxodisírová","H2S2O9 je kyselina diperoxodisírová"],["P3H je fosfán","Al3H je fosfán","AsH3 je arzán","GeH4 je germán","H2Se je selán","PH3 je fosfán","SeH2 je selán","HS2 je sulfán"],["SiN4 je nitrid kremičitý","GaAs je arzenid galitý","LiAs3 je arzenid lítny","Pb3N2 je azid olovnatý","Mg3P2 je fosfid horečnatý","CaC2 je karbid vápenatý","Si3N4 je nitrid kremičitý","AlSb3 je antimonid hlinitý"]]
 
-const validationButton = document.getElementById("validation");
-const setButton = document.getElementById("setQuestions");
-validationButton.addEventListener("click", validation);
-setButton.addEventListener("click", setQuestions);
 
-let list = [];
-    for (let i = 0; i<questions.length; i++){
-        list.push(i);
-    }
-    let permIndeces = randomPermutation(list);
 
 function randint(min, max){
     return Math.floor(Math.random()*(max-min))+min;
@@ -39,7 +30,7 @@ function setQuestions(){
         div.setAttribute('id', i);
         document.getElementById("form").appendChild(div);
         let question = document.createElement('h1');
-        question.textContent = String(i+1) + "." + questions[permIndeces[i]];
+        question.textContent = String(i+1) + ". " + questions[permIndeces[i]];
         question.setAttribute('class', 'paragraph');
         document.getElementById(i).appendChild(question);
         let randomOptions = randomPermutation(options[permIndeces[i]]);
@@ -61,28 +52,10 @@ function setQuestions(){
     }
 }
 
-
-
-
-function colorValidation(){
-    const ticks = document.getElementsByClassName("tick");
-    const answers = document.getElementsByClassName("answer");
-    for (let index in ticks){
-        if (ticks[index].checked) {
-            if (correctAnswer.includes(answers[index].innerHTML)){
-                document.getElementById(index).style.backgroundColor = "green";
-            }
-            else{
-                document.getElementById(index).style.backgroundColor = "red";
-            }
-       }
-
-    }
-}
-
 function validation(){
     const ticks = document.getElementsByClassName("tick");
     const answers = document.getElementsByClassName("answer");
+    errors = [];
     for (let i = 0; i < ticks.length; i++){
         let x = Math.floor(i/4);
         if (ticks[i].checked) {
@@ -91,6 +64,7 @@ function validation(){
             }
             else{
                 document.getElementById('moznost'+String(x)+String(i%4)).style.backgroundColor = "red";
+                errors.push(x);
             }
         }
         else{
@@ -99,6 +73,7 @@ function validation(){
             }
             else{
                 document.getElementById('moznost'+String(x)+String(i%4)).style.backgroundColor = "red";
+                errors.push(x);
             }
        }
     }
@@ -118,5 +93,33 @@ else {
     document.getElementById("pocetotazok").innerHTML = "Počet otázok: " + String(questions.length);
 }
 
+function filterovanie() {
+    var filterBox = document.getElementById("filterBox")
+    for (let i = 0; i<100 && i< options.length; i++){
+        var x = document.getElementById(i);
+        if (!filterBox.checked){
+            x.style.display = "block"
+        }
+        else if (errors.includes(i)){
+            x.style.display = "block";
+        }
+        else{
+            x.style.display = "none";
+        }
+    } 
+}
 
+//main
 
+const validationButton = document.getElementById("validation");
+validationButton.addEventListener("click", validation);
+
+const setButton = document.getElementById("setQuestions");
+setButton.addEventListener("click", setQuestions);
+
+let list = [];
+let errors = [];
+for (let i = 0; i<questions.length; i++){
+    list.push(i);
+}
+let permIndeces = randomPermutation(list);

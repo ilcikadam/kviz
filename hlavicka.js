@@ -130,6 +130,14 @@ function edit(color){
     editctx.fillText("Editor", 70, 35);
 }
 
+//filter
+function filter(){
+    var filterc = document.getElementById("filter");
+    var filterctx = filterc.getContext("2d");
+    filterctx.fillStyle = "white";
+    filterctx.font = "30px Arial";
+    filterctx.fillText("Iba chyby", 10, 40);
+}
 
 //main
 domov("white");
@@ -155,3 +163,5 @@ function editMouseOver(){edit("orange")}
 function editMouseOut(){edit("white")}
 document.getElementById("edit").addEventListener("mouseover", editMouseOver)
 document.getElementById("edit").addEventListener("mouseout", editMouseOut)
+
+filter();
