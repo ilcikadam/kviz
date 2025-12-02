@@ -1,0 +1,103 @@
+@keyframes myAnimation {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+@keyframes mojaAnimacia{
+  from {top: 0px}
+  to {top: 50px;}
+}
+
+@keyframes naspat{
+  from {top: 50px}
+  to {top: 0px;}
+}
+
+
+div.static, div.relative, div.fixed, div.absolute, div.sticky {
+  width: 100px;
+  height: 100px;
+  background-color: greenyellow;
+  border: 3px solid green;
+  padding: 10px
+}
+
+div.static{
+  position: static;
+}
+
+div.relative{
+  position: relative;
+  top: 5000px;
+}
+
+div.fixed{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+div.absolute{
+  position: absolute;
+}
+
+div.sticky{
+  position: sticky;
+  top: 0;
+}
+
+div.vacsie{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 3px solid green;
+  padding: 10px;
+  left: 50%;
+}
+
+div.static p, div.relative p, div.fixed p, div.absolute p, div.sticky p {
+  position: absolute;
+  color: white;
+  font-size: large;
+}
+
+#ty{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+div.container{
+  display: flex;
+  background-color: DodgerBlue;
+  justify-content: space-between;
+}
+
+div.container div{
+  width: 30%;
+}
+
+div.animation {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+div.animation:hover{
+    animation-name: myAnimation;
+    animation-duration: 2s;
+}
+
+div.animacie {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+div.animacie:hover{
+    animation-name: mojaAnimacia;
+    animation-duration: 2s;
+    top: 50px;
+}
